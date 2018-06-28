@@ -24,6 +24,10 @@ namespace CityInfo.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler();
+            }
 
             app.Run(async (context) =>
             {
