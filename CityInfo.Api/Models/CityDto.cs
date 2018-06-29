@@ -10,7 +10,13 @@ namespace CityInfo.Api.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public int NumberOfPointsOfInterest { get; set; }
-        public List<PointOfInterestDto> PointsOfInterest { get; set; }
+        public int NumberOfPointsOfInterest
+        {
+            get
+            {
+                return PointsOfInterest.Count;
+            }
+        }
+        public List<PointOfInterestDto> PointsOfInterest { get; set; } = new List<PointOfInterestDto>(); //Prevents null ref exceptions. Can be done in the constructor but he didn't show that.
     }
 }
